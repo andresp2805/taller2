@@ -1,4 +1,4 @@
-from sys import stdin
+import sys
 
 def maxima_ganancia(n_apuestas: int, apuestas: list[int]) -> int:
     arreglo = [0]*n_apuestas
@@ -12,9 +12,9 @@ def maxima_ganancia(n_apuestas: int, apuestas: list[int]) -> int:
     return ganancia_maxima
 
 def main():
-    n_apuestas = int(stdin.readline().strip())
+    n_apuestas = int(sys.stdin.readline().strip())
     while n_apuestas != 0:
-        apuestas = list(map(int, stdin.readline().split()))
+        apuestas = list(map(int, sys.stdin.readline().split()))
         ganancia_maxima = maxima_ganancia(n_apuestas, apuestas)
 
         if ganancia_maxima > 0:
@@ -22,7 +22,7 @@ def main():
 
         else:
             print("Losing streak.")
-        n_apuestas = int(stdin.readline().strip())
+        n_apuestas = int(sys.stdin.readline().strip())
 
 if __name__ == '__main__':
     main()
